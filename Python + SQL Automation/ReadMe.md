@@ -29,12 +29,3 @@ My project focused on automating the retrieval and processing of patient visit d
 
 
 This internship project was an invaluable experience that solidified my understanding of creating scalable and efficient data solutions. I'm excited to apply these skills to drive data-driven success in my next role!
-
----
-
-**Want to dive into the code?** You can find the full script and a detailed explanation on my GitHub repository. I've also prepared a PDF version of the code for easy viewing.
-
-[Link to your GitHub Repository]
-[Link to your PDF (if applicable)]
-
-#DataAnalytics #Python #SQL #DataAutomation #Internship #DataScience #LinkedIn #CareerGoals #Recruiters #DataCleaning #Pandas #MySQL #Automation
