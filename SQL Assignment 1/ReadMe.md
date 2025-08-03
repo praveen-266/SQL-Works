@@ -191,6 +191,15 @@ SELECT AVG(scost) FROM software WHERE developin = 'pascal';
 
 \</details\>
 
+
+<details>
+<summary>💡 Click to reveal Query & Answer</summary>
+
+SQL
+
+SELECT AVG(scost) FROM software WHERE developin = 'pascal';
+</details>
+
 -----
 
 ### 2\. Display Names, Ages of all Programmers.
