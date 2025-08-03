@@ -176,86 +176,7 @@ Before we start querying, let's see the actual data loaded into our tables. This
 
 -----
 
-## 🛠️ Key Concepts: Your Data Analysis Toolkit
-
-Before we dive into the queries, let's quickly get familiar with some essential database building blocks. Understanding these will help you grasp the logic behind each solution\!
-
-  * **`SELECT`**: This is your go-to command to **pick which columns (or all columns using `*`) you want to see** from your tables.
-
-      * **Scenario**: "Show me just the programmer names and their salaries."
-
-  * **`FROM`**: After `SELECT`, you use `FROM` to **specify which table(s) you're pulling data from**.
-
-      * **Scenario**: "I want to get this information *from* the `programmer` table."
-
-  * **`WHERE`**: This clause is your **filter**\! It lets you specify conditions to **retrieve only the rows that meet certain criteria**.
-
-      * **Scenario**: "Only show me programmers *where* their salary is greater than 3000."
-
-  * **`AVG()` / `SUM()` / `COUNT()` / `MIN()` / `MAX()`**: These are **aggregate functions**. They perform calculations on a set of rows and return a single summary value.
-
-      * **`AVG()`**: Calculates the **average** value.
-          * **Scenario**: "What's the *average* selling cost of software?"
-      * **`SUM()`**: Calculates the **total sum** of values.
-          * **Scenario**: "What's the *total revenue* from all software sales?"
-      * **`COUNT()`**: Counts the **number of rows** (or non-null values in a column).
-          * **Scenario**: "How *many* programmers do we have?"
-      * **`MIN()`**: Finds the **smallest** value.
-          * **Scenario**: "What's the *lowest* development cost for any software?"
-      * **`MAX()`**: Finds the **largest** value.
-          * **Scenario**: "Who earns the *highest* salary?"
-
-  * **`GROUP BY`**: When you use aggregate functions, `GROUP BY` lets you **group rows that have the same values in specified columns** so that the aggregate function works on each group individually.
-
-      * **Scenario**: "Calculate the average salary *for each gender*." (You'd `GROUP BY gender`)
-
-  * **`HAVING`**: Similar to `WHERE`, but `HAVING` is used to **filter groups** that were created with `GROUP BY`. You *cannot* use `WHERE` with aggregate functions directly.
-
-      * **Scenario**: "Show me only those programming languages where the *average sales revenue is above a certain amount*."
-
-  * **`ORDER BY`**: This clause is for **sorting** your results. You can sort in ascending (`ASC`, default) or descending (`DESC`) order.
-
-      * **Scenario**: "List programmers by salary *from highest to lowest*."
-
-  * **`JOIN` (e.g., `INNER JOIN`, `LEFT JOIN`)**: Joins are how you **combine rows from two or more tables** based on a related column between them.
-
-      * **`INNER JOIN`**: Returns only the rows where there's a **match in *both* tables**. Think of it as the intersection.
-          * **Scenario**: "Show me software details *and* the programmer's salary, but only for software that *has* a matching programmer."
-      * **`LEFT JOIN`**: Returns **all rows from the *left* table**, and the matching rows from the right table. If there's no match on the right, you'll see `NULL` values for the right table's columns.
-          * **Scenario**: "List all programmers, *and* if they've developed software, show those details. Even if they haven't developed anything, I still want to see their names."
-
-  * **`UNION` / `UNION ALL`**: These combine the result sets of two or more `SELECT` statements into a single result set.
-
-      * **`UNION`**: Removes duplicate rows.
-      * **`UNION ALL`**: Includes duplicate rows.
-          * **Scenario**: "Combine a list of primary proficiencies with secondary proficiencies into one single list of all skills."
-
-  * **`DISTINCT`**: Used with `SELECT` to **return only unique values**, eliminating duplicates.
-
-      * **Scenario**: "Show me all the *unique* programming languages used in software development."
-
-  * **`TOP` (or `LIMIT` / `FETCH FIRST` depending on SQL dialect)**: Restricts the number of rows returned in a result set.
-
-      * **Scenario**: "Show me the *top 3* highest-paid programmers."
-
-  * **`WITH` (Common Table Expressions - CTEs)**: A way to define a **temporary, named result set** that you can reference within a single statement. They make complex queries much more readable and manageable.
-
-      * **Scenario**: "First, figure out the average student count per course. *Then*, use that average in another part of my query to find courses below that average."
-
-  * **`DATEDIFF()` / `YEAR()` / `MONTH()` / `GETDATE()`**: These are common **date/time functions**.
-
-      * **`DATEDIFF(interval, startdate, enddate)`**: Calculates the difference between two dates based on a specified interval (e.g., year, month, day).
-      * **`YEAR(date)` / `MONTH(date)`**: Extracts the year or month from a date.
-      * **`GETDATE()`**: Returns the current date and time.
-          * **Scenario**: "Calculate a programmer's age or experience based on their date of birth/joining and the current date."
-
-  * **`CASE WHEN ... THEN ... ELSE ... END`**: This is a **conditional expression** that allows you to specify different outcomes based on various conditions.
-
-      * **Scenario**: "If a programmer's birth month is after the current month, subtract one year from their age calculation."
-
------
-
-## 📝 Final Filtered Questions and Answers
+## 📝 SQL Questions and Answers
 
 -----
 
@@ -264,9 +185,9 @@ Before we dive into the queries, let's quickly get familiar with some essential 
 \<details\>
 \<summary\>💡 Click to reveal Query & Answer\</summary\>
 
-```
+
 SELECT AVG(scost) FROM software WHERE developin = 'pascal';
-```
+
 
 \</details\>
 
