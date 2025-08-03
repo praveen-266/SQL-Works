@@ -259,16 +259,14 @@ Before we dive into the queries, let's quickly get familiar with some essential 
 
 -----
 
-### 1\. Find out the selling cost AVG for packages developed in Pascal.
+### 1. Find out the selling cost AVG for packages developed in Pascal.
+<details>
+<summary>💡 Click to reveal Query & Answer</summary>
 
-\<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+SQL
 
-```
 SELECT AVG(scost) FROM software WHERE developin = 'pascal';
-```
-
-\</details\>
+</details>
 
 -----
 
