@@ -12,15 +12,15 @@ This project uses a relational database focused on programmers, their software d
 
   * **Database Setup & Data Population**: All the SQL to get the database up and running.
   * **A Peek at the Actual Data**: See the raw data we're working with.
-  * **Key SQL Concepts Explained**: A friendly guide to the essential SQL building blocks.
-  * **Core & Advanced SQL Queries**: Challenging questions solved with detailed explanations, hidden in interactive dropdowns for a clean view\!
+  * **Key Concepts Explained**: A friendly guide to the essential database building blocks.
+  * **Core & Advanced Queries**: Challenging questions solved with detailed solutions, hidden in interactive dropdowns for a clean view\!
       * `SELECT`, `JOIN`, `GROUP BY`, `HAVING`
       * Subqueries, CTEs, Window Functions
       * Date Functions, Conditional Logic
 
 Whether you're a seasoned \#DataAnalyst, an aspiring \#SQLDeveloper, or just curious about \#DatabaseManagement, there's something here for you\!
 
-Let's get started by setting up our database, reviewing the data it holds, and then exploring some fundamental SQL concepts\! 👇
+Let's get started by setting up our database, reviewing the data it holds, and then exploring some fundamental concepts\! 👇
 
 -----
 
@@ -176,9 +176,9 @@ Before we start querying, let's see the actual data loaded into our tables. This
 
 -----
 
-## 🛠️ Key SQL Concepts: Your Data Analysis Toolkit
+## 🛠️ Key Concepts: Your Data Analysis Toolkit
 
-Before we dive into the queries, let's quickly get familiar with some essential SQL building blocks. Understanding these will help you grasp the logic behind each solution\!
+Before we dive into the queries, let's quickly get familiar with some essential database building blocks. Understanding these will help you grasp the logic behind each solution\!
 
   * **`SELECT`**: This is your go-to command to **pick which columns (or all columns using `*`) you want to see** from your tables.
 
@@ -238,7 +238,7 @@ Before we dive into the queries, let's quickly get familiar with some essential 
 
       * **Scenario**: "Show me the *top 3* highest-paid programmers."
 
-  * **`WITH` (Common Table Expressions - CTEs)**: A way to define a **temporary, named result set** that you can reference within a single SQL statement. They make complex queries much more readable and manageable.
+  * **`WITH` (Common Table Expressions - CTEs)**: A way to define a **temporary, named result set** that you can reference within a single statement. They make complex queries much more readable and manageable.
 
       * **Scenario**: "First, figure out the average student count per course. *Then*, use that average in another part of my query to find courses below that average."
 
@@ -255,25 +255,27 @@ Before we dive into the queries, let's quickly get familiar with some essential 
 
 -----
 
-## 📝 Final Filtered SQL Questions and Answers
+## 📝 Final Filtered Questions and Answers
 
 -----
 
-### 1. Find out the selling cost AVG for packages developed in Pascal.
-<details>
-<summary>💡 Click to reveal Query & Answer</summary>
+### 1\. Find out the selling cost AVG for packages developed in Pascal.
 
-SQL
+\<details\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
+```
 SELECT AVG(scost) FROM software WHERE developin = 'pascal';
-</details>
+```
+
+\</details\>
 
 -----
 
 ### 2\. Display Names, Ages of all Programmers.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT
@@ -289,7 +291,7 @@ FROM programmer;
 ### 3\. Display the Names and Date of Births of all Programmers Born in January.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT pname, dob FROM programmer WHERE MONTH(dob) = 1;
@@ -302,7 +304,7 @@ SELECT pname, dob FROM programmer WHERE MONTH(dob) = 1;
 ### 4\. How much revenue has been earned thru sales of Packages Developed in C.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT SUM(sold * scost) FROM software WHERE developin = 'c';
@@ -315,7 +317,7 @@ SELECT SUM(sold * scost) FROM software WHERE developin = 'c';
 ### 5\. Display details of Packages whose sales crossed the 2000 Mark.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT * FROM software WHERE (sold * scost) > 2000;
@@ -328,7 +330,7 @@ SELECT * FROM software WHERE (sold * scost) > 2000;
 ### 6\. Display the Details of Packages for which Development Cost have been recovered.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT * FROM software WHERE (sold * scost) >= dcost;
@@ -341,7 +343,7 @@ SELECT * FROM software WHERE (sold * scost) >= dcost;
 ### 7\. How many Programmers Paid 5000 to 10000 for their course?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT COUNT(pname) FROM studies WHERE coursefee BETWEEN 5000 AND 10000;
@@ -354,7 +356,7 @@ SELECT COUNT(pname) FROM studies WHERE coursefee BETWEEN 5000 AND 10000;
 ### 8\. Display the details of the Programmers Knowing C.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT * FROM programmer WHERE prof1 = 'c' OR prof2 = 'c';
@@ -367,7 +369,7 @@ SELECT * FROM programmer WHERE prof1 = 'c' OR prof2 = 'c';
 ### 9\. How many Programmers know either COBOL or PASCAL.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT COUNT(pname) FROM programmer WHERE prof1 IN ('cobol', 'pascal') OR prof2 IN ('cobol', 'pascal');
@@ -380,7 +382,7 @@ SELECT COUNT(pname) FROM programmer WHERE prof1 IN ('cobol', 'pascal') OR prof2 
 ### 10\. How many Programmers Don't know PASCAL and C?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT COUNT(pname) FROM programmer
@@ -394,7 +396,7 @@ WHERE NOT (prof1 = 'pascal' OR prof2 = 'pascal' OR prof1 = 'c' OR prof2 = 'c');
 ### 11\. How old is the Oldest Male Programmer?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT TOP 1
@@ -412,7 +414,7 @@ ORDER BY age_in_years DESC;
 ### 12\. What is the AVG age of Female Programmers?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT AVG(
@@ -429,7 +431,7 @@ WHERE gender = 'f';
 ### 13\. Calculate the Experience in Years for each Programmer and Display with their names in Descending order.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT
@@ -446,7 +448,7 @@ ORDER BY experience_in_years DESC;
 ### 14\. Who are the Programmers who celebrate their Birthday's During the Current Month?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT pname, dob FROM programmer WHERE MONTH(dob) = MONTH(GETDATE());
@@ -459,7 +461,7 @@ SELECT pname, dob FROM programmer WHERE MONTH(dob) = MONTH(GETDATE());
 ### 15\. What are the Languages studied by Male Programmers?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT DISTINCT prof1 AS language FROM programmer WHERE gender = 'm' AND prof1 IS NOT NULL
@@ -474,7 +476,7 @@ SELECT DISTINCT prof2 FROM programmer WHERE gender = 'm' AND prof2 IS NOT NULL;
 ### 16\. Display the Cost of Package Developed By each Programmer.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT pname, SUM(scost) AS total_selling_cost FROM software GROUP BY pname;
@@ -487,7 +489,7 @@ SELECT pname, SUM(scost) AS total_selling_cost FROM software GROUP BY pname;
 ### 17\. Display each language name with AVG Development Cost, AVG Selling Cost and AVG Price per Copy.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT
@@ -506,7 +508,7 @@ GROUP BY developin;
 ### 18\. Display each programmer's name, costliest and cheapest Packages Developed by him or her.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT
@@ -524,7 +526,7 @@ GROUP BY pname;
 ### 19\. Display AVG Difference between SCOST, DCOST for Each Package.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT
@@ -541,7 +543,7 @@ GROUP BY title;
 ### 20\. Display the total SCOST, DCOST and amount to Be Recovered for each Programmer for Those Whose Cost has not yet been Recovered.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT
@@ -561,7 +563,7 @@ HAVING SUM(dcost) > SUM(sold * scost);
 ### 21\. Who is the Highest Paid C Programmer?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT TOP 1 *
@@ -577,7 +579,7 @@ ORDER BY salary DESC;
 ### 22\. Display the names of the highest paid programmers for each Language.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 WITH ProgrammerProficiencies AS (
@@ -605,7 +607,7 @@ WHERE rn = 1;
 ### 23\. Who is the least experienced Programmer?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT TOP 1
@@ -622,7 +624,7 @@ ORDER BY experience_in_years ASC;
 ### 24\. Which Female Programmer earning more than 3000 does not know C, C++, ORACLE or DBASE?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT *
@@ -639,7 +641,7 @@ WHERE gender = 'f'
 ### 25\. What is the Costliest course?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT TOP 1 course, coursefee
@@ -654,7 +656,7 @@ ORDER BY coursefee DESC;
 ### 26\. Display the name of the Institute and Course, which has below AVG course fee.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT institute, course, coursefee
@@ -669,7 +671,7 @@ WHERE coursefee < (SELECT AVG(coursefee) FROM studies);
 ### 27\. Display the names of the courses whose fees are within 1000 (+ or -) of the Average Fee.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT course, coursefee
@@ -684,7 +686,7 @@ WHERE coursefee BETWEEN (SELECT AVG(coursefee) - 1000 FROM studies) AND (SELECT 
 ### 28\. Which course has below AVG number of Students?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 WITH CourseStudentCounts AS (
@@ -704,7 +706,7 @@ WHERE student_count < (SELECT AVG(student_count) FROM CourseStudentCounts);
 ### 29\. Which language was used to develop the most number of Packages?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT TOP 1 developin, COUNT(title) AS package_count
@@ -720,7 +722,7 @@ ORDER BY package_count DESC;
 ### 30\. Which programmer has developed the highest number of Packages?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT TOP 1 pname, COUNT(title) AS package_count
@@ -736,7 +738,7 @@ ORDER BY package_count DESC;
 ### 31\. Who are the authors of the Packages, which have recovered more than double the Development cost?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT DISTINCT pname
@@ -751,7 +753,7 @@ WHERE (sold * scost) > (2 * dcost);
 ### 32\. Display the programmer Name and the cheapest packages developed by them in each language.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 WITH RankedPackages AS (
@@ -775,7 +777,7 @@ WHERE rn = 1;
 ### 33\. Display the language used by each programmer to develop the Highest Selling and Lowest-selling package.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 WITH RankedSales AS (
@@ -799,7 +801,7 @@ SELECT pname, developin AS lowest_selling_language FROM RankedSales WHERE rn_low
 ### 34\. Who is the youngest male Programmer born in 1965?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT TOP 1 pname, dob
@@ -815,7 +817,7 @@ ORDER BY dob DESC;
 ### 35\. In which year was the most number of Programmers born?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT TOP 1 YEAR(dob) AS birth_year, COUNT(pname) AS programmer_count
@@ -831,7 +833,7 @@ ORDER BY programmer_count DESC;
 ### 36\. In which month did most number of programmers join?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT TOP 1 MONTH(doj) AS join_month, COUNT(pname) AS programmer_count
@@ -847,7 +849,7 @@ ORDER BY programmer_count DESC;
 ### 37\. In which language are most of the programmer's proficient?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 WITH AllProficiencies AS (
@@ -868,7 +870,7 @@ ORDER BY proficiency_count DESC;
 ### 38\. Who are the male programmers earning below the AVG salary of Female Programmers?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT pname, salary
@@ -883,7 +885,7 @@ WHERE gender = 'm' AND salary < (SELECT AVG(salary) FROM programmer WHERE gender
 ### 39\. Who are the Female Programmers earning more than the Highest Paid Male Programmer?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT pname, salary
@@ -898,7 +900,7 @@ WHERE gender = 'f' AND salary > (SELECT MAX(salary) FROM programmer WHERE gender
 ### 40\. Display the details of those who are drawing the same salary.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT p1.*
@@ -914,7 +916,7 @@ ORDER BY p1.salary, p1.pname;
 ### 41\. Display the details of the Software Developed by the Male Programmers Earning More than 3000/-.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT s.*
@@ -930,7 +932,7 @@ WHERE p.gender = 'm' AND p.salary > 3000;
 ### 42\. Display the details of the Software Developed in C By female programmers of Pragathi.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT s.*
@@ -947,7 +949,7 @@ WHERE s.developin = 'c' AND p.gender = 'f' AND st.institute = 'pragathi';
 ### 43\. Display the details of the software Developed in DBASE by Male Programmers, who belong to the institute in which most number of Programmers studied.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT s.*
@@ -971,7 +973,7 @@ WHERE s.developin = 'dbase'
 ### 44\. Display the details of the software that has developed in the language which is neither the first nor the second proficiency of the programmers.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT s.*
@@ -987,7 +989,7 @@ WHERE s.developin <> p.prof1 AND s.developin <> p.prof2;
 ### 45\. Display the names of the programmers who have not developed any packages.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT pname
@@ -1002,7 +1004,7 @@ WHERE pname NOT IN (SELECT DISTINCT pname FROM software);
 ### 46\. Who are the programmers who joined on the same day?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT p1.pname, p1.doj
@@ -1018,7 +1020,7 @@ ORDER BY p1.doj, p1.pname;
 ### 47\. How many packages were developed by students, who studied in institute that charge the lowest course fee?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT COUNT(s.title) AS number_of_packages
@@ -1034,7 +1036,7 @@ WHERE st.coursefee = (SELECT MIN(coursefee) FROM studies);
 ### 48\. How many packages were developed by the female programmers earning more than the highest paid male programmer?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT COUNT(DISTINCT s.title)
@@ -1050,7 +1052,7 @@ WHERE p.gender = 'f' AND p.salary > (SELECT MAX(salary) FROM programmer WHERE ge
 ### 49\. How many packages are developed by the most experienced programmer from BDPS?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT COUNT(s.title) AS number_of_packages
@@ -1069,7 +1071,7 @@ LIMIT 1;
 ### 50\. List each PROF with the number of Programmers having that PROF and the number of the packages in that PROF.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 WITH AllProficiencies AS (
@@ -1094,7 +1096,7 @@ GROUP BY ap.proficiency;
 ### 51\. Calculate the total number of students for each course, but only for courses with more than 2 students.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT course, COUNT(pname) AS number_of_students
@@ -1111,7 +1113,7 @@ ORDER BY number_of_students DESC;
 ### 52\. For each institute, find the most expensive course offered.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT s1.institute, s1.course, s1.coursefee
@@ -1130,7 +1132,7 @@ JOIN (
 ### 53\. List programmers who know 'C' as their primary proficiency (`prof1`) but haven't developed any software in 'C'.
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 SELECT p.pname, p.prof1
@@ -1146,7 +1148,7 @@ WHERE p.prof1 = 'c' AND s.title IS NULL;
 ### 54\. Which programmer has the most diverse skill set (i.e., knows the most different programming languages)?
 
 \<details\>
-\<summary\>💡 Click to reveal SQL Query & Explanation\</summary\>
+\<summary\>💡 Click to reveal Query & Answer\</summary\>
 
 ```
 WITH AllProficiencies AS (
@@ -1164,6 +1166,6 @@ ORDER BY skill_count DESC;
 
 -----
 
-**Feel free to clone this repository, run the SQL, and explore the data yourself\! If you have any questions or want to discuss further, don't hesitate to reach out.**
+Feel free to clone this repository, run the code, and explore the data yourself\! If you have any questions or want to discuss further, don't hesitate to reach out.
 
 **\#SQL \#DataAnalysis \#Database \#GitHub \#Programming \#DataScience \#Learning**
