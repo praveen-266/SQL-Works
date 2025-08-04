@@ -25,7 +25,6 @@ Let's get started by setting up our database, reviewing the data it holds, and t
 First things first, let's get our database and tables created and populated with data.
 
 ```sql
--- USE Assignment_SQL_Queries; -- This line is not needed if you drop and create the database
 
 DROP DATABASE IF EXISTS Assignment_SQL_Queries;
 CREATE DATABASE Assignment_SQL_Queries;
@@ -1246,5 +1245,3 @@ ORDER BY skill_count DESC;
 -----
 
 Feel free to clone this repository, run the code, and explore the data yourself! If you have any questions or want to discuss further, don't hesitate to reach out.
-
-**#SQL #DataAnalysis #Database #GitHub #Programming #DataScience #Learning**
